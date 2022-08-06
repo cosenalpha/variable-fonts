@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Variable fonts</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css"> <!--Foglio CSS-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="background-color: #08080F">
+
+<header>
+
+  <div id="nav-bar">
+  </div>
+<div class="col-6 elemento">
+  <span class="aa"><a href="contacts.html">who am i</a>
+ </div>
+ <div class="col-6 elemento">
+   <span class="aa"><a href="info.html">info</a>
+</div>
+</div>
+
+</header>
+
+<div id="text">
+<!-- Type your text... -->
+
+<input type="text" id="as" autofocus="" placeholder="Type your text here">
+<br><br><br><br>
+
+<div id="slidervari">
+
+<div class="slidecontainer">
+  <input type="range" min="100" max="900" value="400" class="slider" id="peso">
+  <div class="label">Weight: <span id="numero" style="font-weight:bold;color:none">100</span></div>
+  </div><br><br>
+
+<div class="slidecontainer">
+  <input type="range" min="75" max="100" value="100" class="slider" id="larghezza">
+  <div class="label">Width: <span id="numero1" style="font-weight:bold;color:none">100</span></div>
+</div><br><br>
+
+  <div class="slidecontainer">
+    <input type="range" min="0" max="10" value="0" class="slider" id="inclinazione">
+    <div class="label">Slant: <span id="numero2" style="font-weight:bold;color:none">100</span></div>
+   </div>
+ </div>
+</div>
+
+
+
+
+<script>
+
+  // Script dello slider Weight
+   var y = document.getElementById("numero");
+   var slider = document.getElementById("peso");
+   y.innerHTML = slider.value; // Display the default slider value
+
+   slider.oninput = function() {
+      var valore = y.innerHTML = this.value;
+      document.getElementById('as').style.fontWeight = valore;
+      }
+
+
+
+  // Script dello slider Width
+   function printValue1(suffix) {
+   var w = document.getElementById("numero1");
+   var slider1 = document.getElementById("larghezza");
+   w.innerHTML = slider1.value;
+   var store = document.querySelector('#as');
+
+
+   slider1.oninput = function() {
+   var value = getComputedStyle(store);
+   var valore = w.innerHTML = this.value;
+
+   store.style.setProperty('--stretch', this.value + suffix);
+    }
+  }
+  printValue1("%");
+
+
+  // Script dello slider Slant
+  function printValue(suffix) {
+   var z = document.getElementById("numero2");
+   var slider2 = document.getElementById("inclinazione");
+   z.innerHTML = slider2.value;
+   var store = document.querySelector('#as');
+
+
+   slider2.oninput = function() {
+     var value = getComputedStyle(store);
+     var valore = z.innerHTML = this.value;
+
+     store.style.setProperty('--slant', - this.value + suffix);
+    }
+  }
+  printValue("deg");
+
+
+
+
+</script>
+</body>
+</html>
