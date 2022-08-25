@@ -240,7 +240,7 @@ input[type=text]:focus {
 
 #as {
   font-family: "Roboto VF", "Roboto", sans-serif;
-  font-size: 50px;
+  font-size: 30px;
   font-stretch: var(--stretch);
   --stretch: 100%;
   font-style: oblique var(--slant);
@@ -254,8 +254,8 @@ input[type=text]:focus {
 }
 
 .elemento {
-  height: 70px;
-  width: 45%;
+  height: auto;
+  width: 100%;
   text-align: center;
   padding-top: 2%;
 }
@@ -298,9 +298,8 @@ input[type=text]:focus {
 }
 
 .elemento {
-  height: 70px;
-  text-align: center;
-  padding: 0;
+    height: 70px;
+    width: 45%;
 }
 
 }
